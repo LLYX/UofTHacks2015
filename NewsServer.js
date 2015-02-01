@@ -88,11 +88,11 @@ app.get('/sms/reply/*', function(req, res) {
 			var num_to_show = parseInt(body_message_parts[3]);
 			var title;
 
-			if(body_message_parts.length > 4) {
-				title = body_message_parts.slice(2).join('-');
+			if(body_message_parts.length > 5) {
+				title = body_message_parts.slice(4).join('-');
 			}
 			else {
-				title = body_message_parts[2];
+				title = body_message_parts[4];
 			}
 			
 			if(body_message_parts[2].toLowerCase() == 'critic') {
@@ -130,7 +130,7 @@ app.get('/sms/reply/*', function(req, res) {
 		else if(body_message_parts[1].toLowerCase() == 'info') {
 			var title;
 
-			if(body_message_parts.length > 4) {
+			if(body_message_parts.length > 3) {
 				title = body_message_parts.slice(2).join('-');
 			}
 			else {
